@@ -1,0 +1,23 @@
+.container
+  section.mt-5
+    h2 パスワードの元を入れよう！
+    table.table.table-hover.upon-fukidashi
+      tr
+        th 名前
+        th 値
+      tr.jsDeleteRow
+        td 母方の祖父の名前
+        td yozaemon
+      tr.jsDeleteRow
+        td 勤務先の会社の電話番号下4桁
+        td 1234
+      tr.jsDeleteRow
+        td 一番古い友達の誕生日
+        td 19950806
+      tr.jsNewPwForm
+        td.form-group.mb-0
+          input.form-control.jsPwLabel placeholder="パスワードの名前を入れよう" type="text"
+        td.form-group.d-flex.mb-0
+          input.form-control.mr-2.jsPwValue placeholder="パスワードの値を入れよう" type="text"
+          button.btn.btn-primary.jsAddPwChild type="submit" 追加
+    p.fukidashi 列をクリックで削除できます
