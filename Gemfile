@@ -57,3 +57,7 @@ gem 'bootstrap', '~> 4.0.0'
 
 gem 'jquery-rails'
 gem "slim-rails"
+
+#pdf関連
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
