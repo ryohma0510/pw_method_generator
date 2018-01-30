@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', function() {
   var addDeleteRowEvent = function() {
-    $('.jsDeleteRow').on('click', function () {
-      $(this).parent().remove();
+    $('.jsDeleteRow').on('dblclick', function () {
+      $(this).remove();
       reNamingPwCompTable();
     });
   }

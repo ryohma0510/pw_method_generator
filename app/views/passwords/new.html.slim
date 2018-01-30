@@ -7,20 +7,20 @@
           th パスワード番号
           th 名前
           th 値
-        tr
-          td.jsPwCompNumbering.jsDeleteRow 1
+        tr.jsDeleteRow
+          td.jsPwCompNumbering 1
           td
             = text_field_tag "pwCompLabel1", "母方の祖父の名前", class: "form-control jsPwCompLabel", id: nil
           td
             = text_field_tag "pwCompValue1", "yozaemon", class: "form-control jsPwCompValue", id: nil
-        tr
-          td.jsPwCompNumbering.jsDeleteRow 2
+        tr.jsDeleteRow
+          td.jsPwCompNumbering 2
           td
             = text_field_tag "pwCompLabel2", "母方の祖父の名前", class: "form-control jsPwCompLabel", id: nil
           td
             = text_field_tag "pwCompValue2", "yozaemon", class: "form-control jsPwCompValue", id: nil
-        tr
-          td.jsPwCompNumbering.jsDeleteRow 3
+        tr.jsDeleteRow
+          td.jsPwCompNumbering 3
           td
             = text_field_tag "pwCompLabel3", "母方の祖父の名前", class: "form-control jsPwCompLabel ", id: nil
           td
@@ -30,7 +30,7 @@
             button.btn.btn-primary.jsAddPwComp type="submit" 行を追加
           td
           td
-      p.fukidashi パスワード番号をクリックで削除できます
+      p.fukidashi ダブルクリックで削除できます
     section.mt-5
       h2 どのパスワードを使うのかのルールを決めよう
       table.table.table-hover.upon-fukidashi
