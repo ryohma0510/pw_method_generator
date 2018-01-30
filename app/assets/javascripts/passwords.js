@@ -1,51 +1,38 @@
 $(document).on('turbolinks:load', function() {
-  var addDeleteRowEvent = function () {
+  var addDeleteRowEvent = function() {
     $('.jsDeleteRow').on('click', function () {
-      $(this).remove();
+      $(this).parent().remove();
+      reNamingPwCompTable();
     });
   }
 
+  var reNamingPwCompTable = function() {
+    var pwCompNumberings = $('.jsPwCompNumbering')
+    var pwCompLabels = $('.jsPwCompLabel')
+    var pwCompValues = $('.jsPwCompValue')
+
+    $.each(pwCompNumberings, function(index, pwCompNumbering) {
+      $(pwCompNumbering).text(index + 1);
+    })
+
+    $.each(pwCompLabels, function(index, pwCompLabel) {
+      $(pwCompLabel).attr('name', 'pwCompLabel' + (index + 1));
+    });
+
+    $.each(pwCompValues, function(index, pwCompValue) {
+      $(pwCompValue).attr('name', 'pwCompValue' + (index + 1));
+    })
+  }
+
+  $('.jsAddPwComp').on('click', function(e) {
+    e.preventDefault();
+    var count = $('.jsPwCompNumbering').length + 1;
+    var tableDataNumberHTML = '<td class="jsPwCompNumbering jsDeleteRow">' + count +'</td>';
+    var tableDataPwCompLabelHTML = '<td><input type="text" name="pwCompLabel'+ count + '" value="" class="form-control jsPwCompLabel"></td>';
+    var tableDataPwCompValueHTML = '<td><input type="text" name="pwCompValue'+ count + '" value="" class="form-control jsPwCompValue"></td>';
+    $('.jsNewPwCompForm').before('<tr>' + tableDataNumberHTML + tableDataPwCompLabelHTML + tableDataPwCompValueHTML + '</tr>');
+    addDeleteRowEvent();
+  });
+
   addDeleteRowEvent();
-
-  $('.jsAddPwChild').click(function (e) {
-    e.preventDefault();
-    var pwLabel = $(this).parent().parent().find('.jsPwLabel');
-    var pwValue = $(this).parent().parent().find('.jsPwValue');
-    var rowNum = $(this).parent().parent().parent().find('.jsDeleteRow').length + 1;
-    if (pwLabel.val() && pwValue.val()) {
-      $('.jsNewPwForm').before('<tr class="jsDeleteRow"><td>' + rowNum + '</td><td>' + pwLabel.val() + '</td><td>' + pwValue.val() + '</td></tr>');
-      pwLabel.val('');
-      pwValue.val('');
-      addDeleteRowEvent();
-    } else {
-      alert('入力欄を2つとも埋めてください');
-    }
-  });
-
-  $('.jsAddPwMethod').click(function (e) {
-    e.preventDefault();
-    var newPwMethod = $(this).prev();
-    var rowNum = $(this).parent().parent().parent().find('.jsDeleteRow').length + 1;
-    if (newPwMethod.val()) {
-      $('.jsNewPwMethodForm').before('<tr class="jsDeleteRow"><td>' + rowNum + '</td><td>' + newPwMethod.val() + '</td></tr>');
-      newPwMethod.val('');
-      addDeleteRowEvent();
-    } else {
-      alert('入力欄を埋めてください');
-    }
-  });
-
-  $('.jsAddCondition').click(function (e) {
-    e.preventDefault();
-    var condition = $(this).parent().parent().find('.jsCondition');
-    var conditionValue = $(this).parent().parent().find('.jsConditionValue');
-    if (condition.val() && conditionValue.val()) {
-      $(this).parent().parent('.jsNewPwConditionForm').before('<tr class="jsDeleteRow"><td>' + condition.val() + '</td><td>' + conditionValue.val() + '</td></tr>');
-      condition.val('');
-      conditionValue.val('');
-      addDeleteRowEvent();
-    } else {
-      alert('入力欄を2つとも埋めてください');
-    }
-  });
 });
