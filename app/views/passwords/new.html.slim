@@ -38,17 +38,20 @@
           th 条件
           th パスワード番号
         tr.jsDeleteRow
-          td サービス名に漢字
-          td 1と2
+          td
+            = text_field_tag "pwCompCondition1", "サービス名に漢字がある", class: "form-control jsPwCompCondition", id: nil
+          td
+            = text_field_tag "pwCompConditionNum1", "1と2", class: "form-control jsPwCompConditionNum", id: nil
         tr.jsDeleteRow
-          td サービス名が全部ひらがな
-          td 3と4
-        tr.jsNewPwConditionForm
-          td.form-group.mb-0
-            input.form-control.jsCondition placeholder="条件を入れよう" type="text"
-          td.form-group.d-flex.mb-0
-            input.form-control.mr-2.jsConditionValue placeholder="使うパスワードを入れよう" type="text"
-            button.btn.btn-primary.jsAddCondition type="submit" 追加
+          td
+            = text_field_tag "pwCompCondition2", "サービス名が全部英語", class: "form-control jsPwCompCondition ", id: nil
+          td
+            = text_field_tag "pwCompConditionNum2", "1と3", class: "form-control jsPwCompConditionNum", id: nil
+        tr.jsNewPwCompConditionForm
+          td
+            button.btn.btn-primary.jsAddPwCompCondition type="submit" 行を追加
+          td
+
       p.fukidashi 列をクリックで削除できます
     section.mt-5
       h2 パスワードを複雑化しよう！
