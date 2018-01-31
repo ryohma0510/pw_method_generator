@@ -52,7 +52,7 @@
             button.btn.btn-primary.jsAddPwCompCondition type="submit" 行を追加
           td
 
-      p.fukidashi 列をクリックで削除できます
+      p.fukidashi ダブルクリックで削除できます
     section.mt-5
       h2 パスワードを複雑化しよう！
       table.table.table-hover.upon-fukidashi.jsNumbering
@@ -60,14 +60,37 @@
          th 行番号
          th 複雑化方法
         tr.jsDeleteRow
-          td.jsNumbering 1
-          td 0(ゼロ)をO(大文字のオー)に変更
+          td.jsPwMethodNumbering 1
+          td
+            = text_field_tag "pwMethod1", "0(ゼロ)をO(大文字のオー)に変更", class: "form-control jsPwMethod", id: nil
         tr.jsDeleteRow
-          td 2
-          td パスワードの最初に$最後に!をつける
+          td.jsPwMethodNumbering 2
+          td
+            = text_field_tag "pwMethod2", "パスワードの最初に$最後に!をつける", class: "form-control jsPwMethod", id: nil
         tr.jsNewPwMethodForm
-          td x
-          td.d-flex
-            input.form-control.mr-2 placeholder="新たな複雑化の方法を追加しよう" type="text"
-            button.btn.btn-primary.jsAddPwMethod type="submit" 追加
-      p.fukidashi 列をクリックで削除できます
+          td
+            button.btn.btn-primary.jsAddPwMethod type="submit" 行を追加
+          td
+      p.fukidashi ダブルクリックで削除できます
+    section.mt-5
+      h2 どの複雑化方法を使うか決めよう
+      table.table.table-hover.upon-fukidashi
+        tr
+          th 条件
+          th 行番号
+        tr.jsDeleteRow
+          td
+            = text_field_tag "pwMethodCondition1", "0(ゼロ)をO(大文字のオー)に変更", class: "form-control jsPwMethodCondition", id: nil
+          td
+            = text_field_tag "pwMethodConditionValue1", "1と2", class: "form-control jsPwMethodConditionValue", id: nil
+        tr.jsDeleteRow
+          td
+            = text_field_tag "pwMethodCondition2", "サービスが外国のもの", class: "form-control jsPwMethodCondition", id: nil
+          td
+            = text_field_tag "pwMethodConditionValue2", "3と4", class: "form-control jsPwMethodConditionValue", id: nil
+        tr.jsNewPwMethodConditionForm
+          td
+            button.btn.btn-primary.jsAddPwMethodCondition type="submit" 行を追加
+          td
+      p.fukidashi ダブルクリックで削除できます
+    = submit_tag "pdf作成", class: 'btn btn-primary mt-5'
