@@ -10,21 +10,21 @@
         tr.jsDeleteRow
           td.jsPwCompNumbering 1
           td
-            = text_field_tag "pwCompLabel1", "母方の祖父の名前", class: "form-control jsPwCompLabel", id: nil
+            = text_field_tag "pw_comp[1][label]", "母方の祖父の名前", class: "form-control jsPwCompLabel", id: nil
           td
-            = text_field_tag "pwCompValue1", "yozaemon", class: "form-control jsPwCompValue", id: nil
+            = text_field_tag "pw_comp[1][value]", "yozaemon", class: "form-control jsPwCompValue", id: nil
         tr.jsDeleteRow
           td.jsPwCompNumbering 2
           td
-            = text_field_tag "pwCompLabel2", "母方の祖父の名前", class: "form-control jsPwCompLabel", id: nil
+            = text_field_tag "pw_comp[2][label]", "母方の祖父の名前", class: "form-control jsPwCompLabel", id: nil
           td
-            = text_field_tag "pwCompValue2", "yozaemon", class: "form-control jsPwCompValue", id: nil
+            = text_field_tag "pw_comp[2][value]", "yozaemon", class: "form-control jsPwCompValue", id: nil
         tr.jsDeleteRow
           td.jsPwCompNumbering 3
           td
-            = text_field_tag "pwCompLabel3", "母方の祖父の名前", class: "form-control jsPwCompLabel ", id: nil
+            = text_field_tag "pw_comp[3][label]", "母方の祖父の名前", class: "form-control jsPwCompLabel ", id: nil
           td
-            = text_field_tag "pwCompValue3", "yozaemon", class: "form-control jsPwCompValue", id: nil
+            = text_field_tag "pw_comp[3][value]", "yozaemon", class: "form-control jsPwCompValue", id: nil
         tr.jsNewPwCompForm
           td
             button.btn.btn-primary.jsAddPwComp type="submit" 行を追加
@@ -39,19 +39,18 @@
           th パスワード番号
         tr.jsDeleteRow
           td
-            = text_field_tag "pwCompCondition1", "サービス名に漢字がある", class: "form-control jsPwCompCondition", id: nil
+            = text_field_tag "pw_comp_condition[1][label]", "サービス名に漢字がある", class: "form-control jsPwCompCondition", id: nil
           td
-            = text_field_tag "pwCompConditionNum1", "1と2", class: "form-control jsPwCompConditionNum", id: nil
+            = text_field_tag "pw_comp_condition[1][value]", "1と2", class: "form-control jsPwCompConditionNum", id: nil
         tr.jsDeleteRow
           td
-            = text_field_tag "pwCompCondition2", "サービス名が全部英語", class: "form-control jsPwCompCondition ", id: nil
+            = text_field_tag "pw_comp_condition[2][label]", "サービス名が全部英語", class: "form-control jsPwCompCondition ", id: nil
           td
-            = text_field_tag "pwCompConditionNum2", "1と3", class: "form-control jsPwCompConditionNum", id: nil
+            = text_field_tag "pw_comp_condition[2][value]", "1と3", class: "form-control jsPwCompConditionNum", id: nil
         tr.jsNewPwCompConditionForm
           td
             button.btn.btn-primary.jsAddPwCompCondition type="submit" 行を追加
           td
-
       p.fukidashi ダブルクリックで削除できます
     section.mt-5
       h2 パスワードを複雑化しよう！
@@ -62,11 +61,11 @@
         tr.jsDeleteRow
           td.jsPwMethodNumbering 1
           td
-            = text_field_tag "pwMethod1", "0(ゼロ)をO(大文字のオー)に変更", class: "form-control jsPwMethod", id: nil
+            = text_field_tag "pw_method[1]", "0(ゼロ)をO(大文字のオー)に変更", class: "form-control jsPwMethod", id: nil
         tr.jsDeleteRow
           td.jsPwMethodNumbering 2
           td
-            = text_field_tag "pwMethod2", "パスワードの最初に$最後に!をつける", class: "form-control jsPwMethod", id: nil
+            = text_field_tag "pw_method[2]", "パスワードの最初に$最後に!をつける", class: "form-control jsPwMethod", id: nil
         tr.jsNewPwMethodForm
           td
             button.btn.btn-primary.jsAddPwMethod type="submit" 行を追加
@@ -80,14 +79,14 @@
           th 行番号
         tr.jsDeleteRow
           td
-            = text_field_tag "pwMethodCondition1", "0(ゼロ)をO(大文字のオー)に変更", class: "form-control jsPwMethodCondition", id: nil
+            = text_field_tag "pw_method_condition[1][label]", "0(ゼロ)をO(大文字のオー)に変更", class: "form-control jsPwMethodCondition", id: nil
           td
-            = text_field_tag "pwMethodConditionValue1", "1と2", class: "form-control jsPwMethodConditionValue", id: nil
+            = text_field_tag "pw_method_condition[1][value]", "1と2", class: "form-control jsPwMethodConditionValue", id: nil
         tr.jsDeleteRow
           td
-            = text_field_tag "pwMethodCondition2", "サービスが外国のもの", class: "form-control jsPwMethodCondition", id: nil
+            = text_field_tag "pw_method_condition[2][label]", "サービスが外国のもの", class: "form-control jsPwMethodCondition", id: nil
           td
-            = text_field_tag "pwMethodConditionValue2", "3と4", class: "form-control jsPwMethodConditionValue", id: nil
+            = text_field_tag "pw_method_condition[2][value]", "3と4", class: "form-control jsPwMethodConditionValue", id: nil
         tr.jsNewPwMethodConditionForm
           td
             button.btn.btn-primary.jsAddPwMethodCondition type="submit" 行を追加
