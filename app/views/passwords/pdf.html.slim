@@ -1,1 +1,39 @@
-p test text
+.alwaysbreak style="page-break-after: always;"
+  p パスワードの元
+  table.table
+    tr
+      th パスワード番号
+      th 名前
+      th 値
+    - @pw_comp.each do |index, pw_comp|
+      tr
+        td = index
+        td = pw_comp[:label]
+        td = pw_comp[:value]
+  p.mt-5 パスワード選ぶ条件
+  table.table
+    tr
+      th 条件
+      th パスワード番号
+    - @pw_comp_condition.each do |index, pw_comp_condition|
+      tr
+        td = pw_comp_condition[:label]
+        td = pw_comp_condition[:value]
+p パスワード複雑化方法
+table.table
+  tr
+    th メソッド番号
+    th 方法
+  - @pw_method.each do |index, pw_method|
+    tr
+      td = index
+      td = pw_method
+p.mt-5 複雑化方法の選び方
+table.table
+  tr
+    th 条件
+    th 方法の番号
+  - @pw_method_condition.each do |index, pw_method_condition|
+    tr
+      td = pw_method_condition[:label]
+      td = pw_method_condition[:value]
